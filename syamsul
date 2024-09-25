@@ -1,0 +1,11 @@
+@echo off
+cls
+COLOR E
+TITLE backup xls, ppt doc
+ECHO MASUKKAN DRIVE YANG AKAN DICOPI
+set /p drivesource3=
+
+robocopy %drivesource3%: Backup_%username%_%drivesource3% *.xls *.doc *.PPT *.xlsx *.docx *.PPTX *.RTF /s /z /XO /w:0 /r:0 /XD "program files (x86)" "program files" "windows" "programdata" "appdata"
+Msg * PROSES BACKUP SELESAI
+attrib -s -h Backup_%username%_%drivesource3%
+exit
